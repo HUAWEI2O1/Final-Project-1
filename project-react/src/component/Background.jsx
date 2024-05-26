@@ -1,15 +1,14 @@
+import React from 'react';
 import '../App.css';
 import '../css/website.css';
 import Background from '../img/background.jpg';
 
-function header () {
+function Header() {
     return (
-        <div className="background">
-            <img src={Background} />
-            <div className="color-overlay">
+        <div className="background" style={{ backgroundImage: `url(${Background})` }}>
+            <div className="color-overlay"></div>
         </div>
-    </div>
-    )
+    );
 }
 
-export default header
+export default Header;
