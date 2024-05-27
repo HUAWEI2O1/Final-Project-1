@@ -16,7 +16,6 @@
             <a href="#" onclick="scrollToSection('section1')">Home</a>
             <a href="#" onclick="scrollToSection('section2')">Recipes</a>
             <a href="#" onclick="scrollToSection('section3')">About</a>
-            
             <a href="#" onclick="scrollToSection('section4')">Contact</a>
         </div>
         
@@ -55,15 +54,15 @@
             function scrollToSection(sectionId) {
                 const section = document.getElementById(sectionId);
                 
-                // Check if navigation is closed
+
                 if (navClosed) {
                     section.scrollIntoView({ behavior: 'smooth' });
                 } else {
-                    // Close the navigation first, then scroll
+
                     closeNav();
                     setTimeout(() => {
                         section.scrollIntoView({ behavior: 'smooth' });
-                    }, 500); // Delay to ensure navigation is closed before scrolling
+                    }, 500); 
                 }
             }
         </script>
