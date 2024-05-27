@@ -5,18 +5,24 @@ import Sinigang from '../img/Sinigang1.jpg';
 import Adobo from '../img/adobochicken1.jpg';
 import Pancit from '../img/pancit1.jpg';
 import Humba from '../img/humba.jpg'; 
+import Dinuguan from '../img/dinuguan.jpg'; 
+import Sisig from '../img/sisig.jpg'; 
 
 function Section2() {
     const [showMoreAdobo, setShowMoreAdobo] = useState(false);
     const [showMoreSinigang, setShowMoreSinigang] = useState(false);
     const [showMorePancit, setShowMorePancit] = useState(false);
     const [showMoreHumba, setShowMoreHumba] = useState(false);
+    const [showMoreDinuguan, setShowMoreDinuguan] = useState(false);
+    const [showMoreSisig, setShowMoreSisig] = useState(false);
 
     const toggleMoreInfo = (dish) => {
         setShowMoreAdobo(dish === 'Adobo' ? !showMoreAdobo : false);
         setShowMoreSinigang(dish === 'Sinigang' ? !showMoreSinigang : false);
         setShowMorePancit(dish === 'Pancit' ? !showMorePancit : false);
         setShowMoreHumba(dish === 'Humba' ? !showMoreHumba : false);
+        setShowMoreDinuguan(dish === 'Dinuguan' ? !showMoreDinuguan : false);
+        setShowMoreSisig(dish === 'Sisig' ? !showMoreSisig : false);
     };
 
     return (
@@ -115,6 +121,54 @@ function Section2() {
                                             <li>Brown sugar</li>
                                         </ul>
                                         <button onClick={() => setShowMoreHumba(false)}>Close</button>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                    <div className="card">
+                        <img src={Dinuguan} alt="Dinuguan" />
+                        <div className="card-content">
+                            <h3>Dinuguan</h3>
+                            <p>Dinuguan is a savory Filipino stew made with pork, vinegar, and pig's blood.</p>
+                            <button onClick={() => toggleMoreInfo('Dinuguan')}>More Info</button>
+                            {showMoreDinuguan && (
+                                <div className="more-info-container">
+                                    <div className="more-info">
+                                        <ul>
+                                            <li>Pork</li>
+                                            <li>Pig's blood</li>
+                                            <li>Vinegar</li>
+                                            <li>Garlic</li>
+                                            <li>Onions</li>
+                                            <li>Chili peppers</li>
+                                            <li>Bay leaves</li>
+                                        </ul>
+                                        <button onClick={() => setShowMoreDinuguan(false)}>Close</button>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                    <div className="card">
+                        <img src={Sisig} alt="Sisig" />
+                        <div className="card-content">
+                            <h3>Sisig</h3>
+                            <p>Sisig is a Filipino dish made from parts of pig head and liver, seasoned with calamansi, onions, and chili peppers.</p>
+                            <button onClick={() => toggleMoreInfo('Sisig')}>More Info</button>
+                            {showMoreSisig && (
+                                <div className="more-info-container">
+                                    <div className="more-info">
+                                        <ul>
+                                            <li>Pig head</li>
+                                            <li>Liver</li>
+                                            <li>Calamansi</li>
+                                            <li>Onions</li>
+                                            <li>Chili peppers</li>
+                                            <li>Garlic</li>
+                                            <li>Mayonnaise (optional)</li>
+                                        </ul>
+                                        <button onClick={() => setShowMoreSisig(false)}>Close</button>
                                     </div>
                                 </div>
                             )}
