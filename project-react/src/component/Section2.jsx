@@ -4,26 +4,19 @@ import '../css/website.css';
 import Sinigang from '../img/Sinigang1.jpg';
 import Adobo from '../img/adobochicken1.jpg';
 import Pancit from '../img/pancit1.jpg';
+import Humba from '../img/humba.jpg'; 
 
 function Section2() {
     const [showMoreAdobo, setShowMoreAdobo] = useState(false);
     const [showMoreSinigang, setShowMoreSinigang] = useState(false);
     const [showMorePancit, setShowMorePancit] = useState(false);
+    const [showMoreHumba, setShowMoreHumba] = useState(false);
 
     const toggleMoreInfo = (dish) => {
-        if (dish === 'Adobo') {
-            setShowMoreAdobo(!showMoreAdobo);
-            setShowMoreSinigang(false);
-            setShowMorePancit(false);
-        } else if (dish === 'Sinigang') {
-            setShowMoreSinigang(!showMoreSinigang);
-            setShowMoreAdobo(false);
-            setShowMorePancit(false);
-        } else if (dish === 'Pancit') {
-            setShowMorePancit(!showMorePancit);
-            setShowMoreAdobo(false);
-            setShowMoreSinigang(false);
-        }
+        setShowMoreAdobo(dish === 'Adobo' ? !showMoreAdobo : false);
+        setShowMoreSinigang(dish === 'Sinigang' ? !showMoreSinigang : false);
+        setShowMorePancit(dish === 'Pancit' ? !showMorePancit : false);
+        setShowMoreHumba(dish === 'Humba' ? !showMoreHumba : false);
     };
 
     return (
@@ -44,8 +37,8 @@ function Section2() {
                                             <li>Chicken</li>
                                             <li>Soy sauce</li>
                                             <li>White vinegar</li>
-                                            <li>Onion </li>
-                                            <li>Garlic </li>
+                                            <li>Onion</li>
+                                            <li>Garlic</li>
                                             <li>Sugar</li>
                                             <li>Bay leaves</li>
                                         </ul>
@@ -64,14 +57,14 @@ function Section2() {
                             {showMoreSinigang && (
                                 <div className="more-info-container">
                                     <div className="more-info">
-                                    <ul>
-                                            <li>Chicken</li>
-                                            <li>Soy sauce</li>
-                                            <li>White vinegar</li>
-                                            <li>Onion </li>
-                                            <li>Garlic </li>
-                                            <li>Sugar</li>
-                                            <li>Bay leaves</li>
+                                        <ul>
+                                            <li>Pork</li>
+                                            <li>Tamarind</li>
+                                            <li>Water spinach</li>
+                                            <li>Radish</li>
+                                            <li>Tomatoes</li>
+                                            <li>Onions</li>
+                                            <li>Green beans</li>
                                         </ul>
                                         <button onClick={() => setShowMoreSinigang(false)}>Close</button>
                                     </div>
@@ -88,16 +81,40 @@ function Section2() {
                             {showMorePancit && (
                                 <div className="more-info-container">
                                     <div className="more-info">
-                                    <ul>
+                                        <ul>
+                                            <li>Noodles</li>
                                             <li>Chicken</li>
+                                            <li>Carrots</li>
+                                            <li>Cabbage</li>
                                             <li>Soy sauce</li>
-                                            <li>White vinegar</li>
-                                            <li>Onion </li>
-                                            <li>Garlic </li>
-                                            <li>Sugar</li>
-                                            <li>Bay leaves</li>
+                                            <li>Garlic</li>
+                                            <li>Onion</li>
                                         </ul>
                                         <button onClick={() => setShowMorePancit(false)}>Close</button>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                    <div className="card">
+                        <img src={Humba} alt="Humba" />
+                        <div className="card-content">
+                            <h3>Humba</h3>
+                            <p>Humba is a Filipino braised pork dish cooked with soy sauce, sugar, and spices.</p>
+                            <button onClick={() => toggleMoreInfo('Humba')}>More Info</button>
+                            {showMoreHumba && (
+                                <div className="more-info-container">
+                                    <div className="more-info">
+                                        <ul>
+                                            <li>Pork belly</li>
+                                            <li>Soy sauce</li>
+                                            <li>Vinegar</li>
+                                            <li>Garlic</li>
+                                            <li>Black beans</li>
+                                            <li>Bay leaves</li>
+                                            <li>Brown sugar</li>
+                                        </ul>
+                                        <button onClick={() => setShowMoreHumba(false)}>Close</button>
                                     </div>
                                 </div>
                             )}
