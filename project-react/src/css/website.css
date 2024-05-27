@@ -63,6 +63,8 @@ body {
     align-items: center;
     margin-right: auto;
     margin-left: auto;
+    background-color: #987554;
+
 }
 
 
@@ -81,11 +83,6 @@ body {
     border-radius: 5px;
 }
 
-.topnav a.active {
-    background-color: #db930d;
-    color: white;
-    border-radius: 5px;
-}
 .logo {
     display: block;
     width: 100px;
