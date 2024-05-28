@@ -28,7 +28,7 @@ function Section2() {
     return (
         <div>
             <section id="section2" className="section-bg2">
-                <h3>MENU</h3>
+                <h2>RECIPES</h2>
                 <div className="menu-container">
                     <div className="card">
                         <img src={Adobo} alt="Adobo Chicken" />
