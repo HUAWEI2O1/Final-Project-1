@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../App.css';
-import '../css/website.css'; // You can remove this line if not used
-import Logo from '../img/LOGO.png'; // Adjust the path to match your file structure
+import '../css/website.css';
+import Logo from '../img/LOGO.png';
 
 function Header() {
     const scrollToSection = (sectionId) => {
@@ -15,7 +16,7 @@ function Header() {
         <div className="header-container">
             <div className="topnav">
                 <a href="#" onClick={() => scrollToSection('section1')}>Home</a>
-                <a href="#" onClick={() => scrollToSection('section2')}>Recipes</a>
+                <Link to="/RecipesPage">Recipes</Link>
                 <a href="#" onClick={() => scrollToSection('section3')}>About</a>
                 <a href="#" onClick={() => scrollToSection('section4')}>Contact</a>
             </div>
